@@ -1,4 +1,4 @@
-package example.controller;
+package com.miu.rental.controller.dashboard;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -7,11 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-@WebServlet({"/home",""})
-public class HomeController extends HttpServlet {
+@WebServlet("/dashboard")
+public class Dashboard extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher view = req.getRequestDispatcher("/WEB-INF/home.jsp");
+        RequestDispatcher view = req.getRequestDispatcher("/WEB-INF/dashboard/dashboard.jsp");
         view.forward(req,resp);
+
     }
 }

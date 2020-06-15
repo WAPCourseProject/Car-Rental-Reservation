@@ -1,4 +1,4 @@
-package example.controller.dashboard;
+package com.miu.rental.controller.dashboard;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -1,4 +1,4 @@
-package example.controller.dashboard.admin;
+package com.miu.rental.controller.dashboard.admin;
 
 import javax.servlet.annotation.WebServlet;
 
