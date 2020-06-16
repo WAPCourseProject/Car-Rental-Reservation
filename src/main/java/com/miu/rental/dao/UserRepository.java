@@ -10,7 +10,9 @@ import java.util.ArrayList;
 public class UserRepository {
     private static ArrayList<User> users = new ArrayList<>();
 
-
+    public  static  ArrayList<User> getAllUsers(){
+        return users;
+    }
     public static Boolean isEmpty(){
         if(users.size()==0) return true;
         else return false;
