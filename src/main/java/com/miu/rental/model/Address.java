@@ -1,7 +1,5 @@
 package com.miu.rental.model;
 
-
-
 public class Address {
     private Client owner;
     private String street;

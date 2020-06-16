@@ -1,8 +1,8 @@
 package com.miu.rental.model;
 
-import com.miu.rental.model.customAttributeType.*;
+import com.miu.rental.model.customAttributeType.Role;
 
-public class Admin extends User{
+public class Admin extends User {
     private String employeeId;
 
     public Admin() {

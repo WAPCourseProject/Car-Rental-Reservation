@@ -1,6 +1,8 @@
 package com.miu.rental.model;
 
-import com.miu.rental.model.customAttributeType.*;
+import com.miu.rental.model.customAttributeType.BodyType;
+import com.miu.rental.model.customAttributeType.FuelType;
+import com.miu.rental.model.customAttributeType.Transmission;
 
 public class Vehicle {
     private Integer vehicleId;

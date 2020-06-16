@@ -31,25 +31,35 @@
                         <div class="card shadow-lg border-0 rounded-lg mt-5">
                             <div class="card-header justify-content-center"><h3 class="font-weight-light my-4">Create Account</h3></div>
                             <div class="card-body">
-                                <form>
+                                <label>${error_message}</label>
+                                <form method="post">
                                     <div class="form-row">
                                         <div class="col-md-6">
-                                            <div class="form-group"><label class="small mb-1" for="inputFirstName">First Name</label><input class="form-control py-4" id="inputFirstName" type="text" placeholder="Enter first name" /></div>
+                                            <div class="form-group"><label class="small mb-1" for="inputFirstName">First Name</label><input class="form-control py-4" id="inputFirstName" name="inputFirstName" type="text" placeholder="Enter first name" /></div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="form-group"><label class="small mb-1" for="inputLastName">Last Name</label><input class="form-control py-4" id="inputLastName" type="text" placeholder="Enter last name" /></div>
+                                            <div class="form-group"><label class="small mb-1" for="inputLastName">Last Name</label><input class="form-control py-4" id="inputLastName" name="inputLastName" type="text" placeholder="Enter last name" /></div>
                                         </div>
                                     </div>
-                                    <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Email</label><input class="form-control py-4" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Enter email address" /></div>
                                     <div class="form-row">
                                         <div class="col-md-6">
-                                            <div class="form-group"><label class="small mb-1" for="inputPassword">Password</label><input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" /></div>
+                                            <div class="form-group"><label class="small mb-1" for="inputUserName">User Name</label><input class="form-control py-4" id="inputUserName" name="inputUserName" type="text" placeholder="Enter user name" /></div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="form-group"><label class="small mb-1" for="inputConfirmPassword">Confirm Password</label><input class="form-control py-4" id="inputConfirmPassword" type="password" placeholder="Confirm password" /></div>
+                                            <div class="form-group"><label class="small mb-1" for="inputLastName">Email</label><input class="form-control py-4" id="inputEmailAddress" name="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Enter email address" /></div>
                                         </div>
                                     </div>
-                                    <div class="form-group mt-4 mb-0"><a class="btn btn-primary btn-block" href="">Create Account</a></div>
+                                    <div class="form-group">
+                                    <div class="form-row">
+                                        <div class="col-md-6">
+                                            <div class="form-group"><label class="small mb-1" for="inputPassword">Password</label><input class="form-control py-4" id="inputPassword" name="inputPassword" type="password" placeholder="Enter password" /></div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group"><label class="small mb-1" for="inputConfirmPassword">Confirm Password</label><input class="form-control py-4" id="inputConfirmPassword" name="inputConfirmPassword" type="password" placeholder="Confirm password" /></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mt-4 mb-0"><button type="submit" class="btn btn-primary btn-block">Create Account</button> </div>
+                                    </div>
                                 </form>
                             </div>
                             <div class="card-footer text-center">

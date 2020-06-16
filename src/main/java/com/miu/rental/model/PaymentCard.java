@@ -4,7 +4,7 @@ import com.miu.rental.model.customAttributeType.CardType;
 
 import java.time.LocalDate;
 
-public class Wallet {
+public class PaymentCard {
     private Client owner;
     private Enum<CardType> type;
     private String nameOnCard;
@@ -12,10 +12,10 @@ public class Wallet {
     private LocalDate expirationDate;
     private Integer code;
 
-    public Wallet() {
+    public PaymentCard() {
     }
 
-    public Wallet(Client owner, Enum<CardType> type, String nameOnCard, String cardNumber, LocalDate expirationDate, Integer code) {
+    public PaymentCard(Client owner, Enum<CardType> type, String nameOnCard, String cardNumber, LocalDate expirationDate, Integer code) {
         this.owner = owner;
         this.type = type;
         this.nameOnCard = nameOnCard;
