@@ -33,15 +33,17 @@
             <div class="card shadow-lg border-0 rounded-lg mt-5">
               <div class="card-header justify-content-center"><h3 class="font-weight-light my-4">Login</h3></div>
               <div class="card-body">
-                <form>
-                  <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Email</label><input class="form-control py-4" id="inputEmailAddress" type="email" placeholder="Enter email address" /></div>
-                  <div class="form-group"><label class="small mb-1" for="inputPassword">Password</label><input class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" /></div>
+                <label>${error_message}</label>
+                <form method="post" >
+                  <div class="form-group"><label class="small mb-1" for="inputUserName">User Name</label><input class="form-control py-4" id="inputUserName" name="inputUserName" type="text" value="${cookie.userName.value}" placeholder="Enter user name" required/></div>
+                  <div class="form-group"><label class="small mb-1" for="inputPassword">Password</label><input class="form-control py-4" id="inputPassword" name="inputPassword" type="password" value="${cookie.password.value}" placeholder="Enter password" required/></div>
                   <div class="form-group">
-                    <div class="custom-control custom-checkbox"><input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" /><label class="custom-control-label" for="rememberPasswordCheck">Remember password</label></div>
+                    <div class="custom-control custom-checkbox"><input class="custom-control-input" id="rememberPasswordCheck" ${cookie.remember.value} name="rememberPasswordCheck" value="remember" type="checkbox" /><label class="custom-control-label" for="rememberPasswordCheck">Remember password</label></div>
                   </div>
-                  <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><a class="small" href="forget-password">Forgot Password?</a><a class="btn btn-primary" href="dashboard">Login</a></div>
+                  <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><a class="small" href="forget-password">Forgot Password?</a><button type="submit" class="btn btn-primary">Login</button></div>
                 </form>
               </div>
+
               <div class="card-footer text-center">
                 <div class="small"><a href="register">Need an account? Sign up!</a></div>
                 <div class="small"><a href="home">Go Back to Home</a></div>

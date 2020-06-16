@@ -49,24 +49,6 @@
 
             <!-- Put Your content in here -->
 
-
-            <div class="card mb-4">
-                <div class="card-body p-0">
-                    <div class="row no-gutters">
-                        <div class="col-lg-6 p-5">
-                            <a class="badge badge-marketing badge-primary-soft badge-pill text-primary mb-3" href="#!">Web</a><a class="text-dark" href="#!"><h1>News companies post headline about creating new websites with powerful UI kits</h1></a>
-                            <p>When creating and developing startups, using a UI kit to bootstrap your companies website can be an extremely efficient way to save time, money, and runway.</p>
-                            <a class="text-arrow-icon small" href="#!">Read more<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-                        </div>
-                        <div class="col-lg-6 align-self-stretch bg-img-cover d-none d-lg-flex" style="background-image: url(&quot;https://source.unsplash.com/aiwuLjLPFnU/1200x800&quot;)"></div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
         </main>
     </div>
     <div id="layoutDefault_footer">

@@ -1,6 +1,6 @@
 package com.miu.rental.model;
 
-import com.miu.rental.model.customAttributeType.*;
+import com.miu.rental.model.customAttributeType.Role;
 
 public abstract class User {
     private Integer userId;
