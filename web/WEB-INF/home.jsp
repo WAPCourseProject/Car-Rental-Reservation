@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Grace
@@ -40,9 +41,13 @@
                             <li class="nav-item"><a class="nav-link" href="">Home </a></li>
                             <li class="nav-item"><a class="nav-link" href="cars">Browse Cars</a></li>
                         </ul>
-                        <a class="btn-primary btn rounded-pill px-4 ml-lg-4"
-                           href="login">Log in<i
-                                class="ml-1"></i></a>
+
+                            <a class="btn-primary btn rounded-pill px-4 ml-lg-4"
+                               href="login">Log in<i
+                                    class="ml-1"></i></a>
+
+
+
                     </div>
                 </div>
             </nav>

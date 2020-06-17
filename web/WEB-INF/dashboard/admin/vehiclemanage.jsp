@@ -45,7 +45,7 @@
     <script type="text/javascript" src="resources/js/scriptCar.js"></script>
     <script type="text/javascript" src="resources/js/delete.js"></script>
 </head>
-<body class="">
+<body>
 <div class="wrapper ">
     <div class="sidebar" data-color="green" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
         <!--

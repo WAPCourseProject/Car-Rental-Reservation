@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Grace
@@ -62,24 +63,27 @@
 
 
         <!-- Heading -->
-        <div class="sidebar-heading">
-            Administrator
-        </div>
+        <c:if test="${userID==4}">
+            <div class="sidebar-heading">
+                Administrator
+            </div>
 
 
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-            <a class="nav-link" href="">
-                <i class="fas fa-fw fa-car"></i>
-                <span>Vehicle</span></a>
-        </li>
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="admin/vehicle">
+                    <i class="fas fa-fw fa-car"></i>
+                    <span>Vehicle</span></a>
+            </li>
 
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Other Future</span></a>
-        </li>
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="admin/user_management">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>User Management</span></a>
+            </li>
+        </c:if>
+
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">

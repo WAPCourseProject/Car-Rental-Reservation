@@ -51,11 +51,7 @@
         <hr class="sidebar-divider my-0">
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item">
-            <a class="nav-link" href="dashboard">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
-        </li>
+
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -69,14 +65,14 @@
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="vehicle">
                 <i class="fas fa-fw fa-car"></i>
                 <span>Vehicle</span></a>
         </li>
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="admin/user_management">
+            <a class="nav-link" href="user_management">
                 <i class="fas fa-fw fa-table"></i>
                 <span> User Management</span></a>
         </li>
@@ -272,11 +268,7 @@
                         <div class="table-responsive">
                             <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
                                 <div class="row">
-                                    <div class="col-sm-12 col-md-6">
-                                        <div id="dataTable_filter" class="dataTables_filter"><label>Search:<input
-                                                type="search" class="form-control form-control-sm" placeholder=""
-                                                aria-controls="dataTable"></label></div>
-                                    </div>
+
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -310,11 +302,7 @@
                                                     colspan="1" aria-label="Age: activate to sort column ascending"
                                                     style="width: 31px;">Role
                                                 </th>
-                                                <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1"
-                                                    colspan="1"
-                                                    aria-label="Start date: activate to sort column ascending"
-                                                    style="width: 68px;">Status
-                                                </th>
+
 
                                             </tr>
                                             </thead>
@@ -326,7 +314,7 @@
                                                 <th rowspan="1" colspan="1">Email</th>
                                                 <th rowspan="1" colspan="1">User Name</th>
                                                 <th rowspan="1" colspan="1">Role</th>
-                                                <th rowspan="1" colspan="1">Status</th>
+
                                             </tr>
                                             </tfoot>
                                             <tbody>

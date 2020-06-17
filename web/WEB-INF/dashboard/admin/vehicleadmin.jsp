@@ -42,14 +42,13 @@
     <script type="text/javascript"
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/scriptCar.js"></script>
-    <
+
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/delete.js"></script>
 
 </head>
 
-<body id="page-top">
+<body>
 
-<!-- Page Wrapper -->
 <div id="wrapper">
 
     <!-- Sidebar -->
@@ -67,11 +66,7 @@
         <hr class="sidebar-divider my-0">
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item">
-            <a class="nav-link" href="dashboard">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
-        </li>
+
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -85,13 +80,17 @@
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="vehicle">
                 <i class="fas fa-fw fa-car"></i>
                 <span>Vehicle</span></a>
         </li>
 
         <!-- Nav Item - Tables -->
-
+        <li class="nav-item">
+            <a class="nav-link" href="user_management">
+                <i class="fas fa-fw fa-table"></i>
+                <span> User Management</span></a>
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -249,7 +248,7 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">${fullName}</span>
                             <img class="img-profile rounded-circle" src="https://source.unsplash.com/2LowviVHZ-E/60x60">
                         </a>
                         <!-- Dropdown - User Information -->
@@ -271,7 +270,6 @@
                 </ul>
 
             </nav>
-            <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
