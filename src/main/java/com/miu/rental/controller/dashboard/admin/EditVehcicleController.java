@@ -61,27 +61,10 @@ public class EditVehcicleController extends HttpServlet {
 
         String id = req.getParameter("vehicleId");
         Integer carId = Integer.parseInt(id);
-//        String make = req.getParameter("make");
-//        String model = req.getParameter("model");
-//        String color = req.getParameter("color");
-//        int capacity = Integer.parseInt("capacity");
-//        int year = Integer.parseInt(req.getParameter("year"));
         String condition = req.getParameter("condition");
-//       int mileage = Integer.parseInt(req.getParameter("mileage"));
-////        Double price = Double.parseDouble("price");
-//        String platenumber = req.getParameter("platenumber");
         boolean available = Boolean.parseBoolean(req.getParameter("avaialable"));
-//        String imageUrl = req.getParameter("imageurl");
-
-
-//        Vehicle vehicle = new Vehicle(, make, year, capacity, mileage, condition, platenumber,
-//                price, available, color, model);
-//        Vehicle vehicle = new Vehicle(, );
 
         vehicleRepository.modifyVehicleById(carId, condition, available);
-//        dao.updateVehicle(vehicle);
-//        System.out.println(vehicle.getRentPrice());
-//        resp.sendRedirect("/admin/vehicle");
         resp.sendRedirect("vehicle");
 
 

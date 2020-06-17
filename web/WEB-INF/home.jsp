@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Grace
@@ -37,153 +38,60 @@
                             aria-expanded="false" aria-label="Toggle navigation"><i data-feather="menu"></i></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto mr-lg-5">
-                            <li class="nav-item"><a class="nav-link" href="">Home </a></li>
-                            <li class="nav-item"><a class="nav-link" href="cars">Cars</a></li>
+                            <li class="nav-item"><a class="nav-link" href="home">Home </a></li>
+                            <li class="nav-item"><a class="nav-link" href="cars">Browse Cars</a></li>
                         </ul>
-                        <a class="btn-primary btn rounded-pill px-4 ml-lg-4"
-                           href="login">Log in<i
-                                class="ml-1"></i></a>
+
+                            <a class="btn-primary btn rounded-pill px-4 ml-lg-4"
+                               href="login">Log in<i
+                                    class="ml-1"></i></a>
+
+
+
                     </div>
                 </div>
             </nav>
-            <header class="page-header page-header-dark bg-gradient-primary-to-secondary">
-                <div class="page-header-content mb-n5">
+            <header class="page-header page-header-light bg-img-cover overlay overlay-light overlay-80" style="background-image: url(&quot;https://source.unsplash.com/m3m-lnR90uM/1600x1200&quot;)">
+                <div class="page-header-content py-5">
                     <div class="container">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-lg-6" data-aos="fade-right">
-                                <h1 class="page-header-title">Car Rental Reservation Component</h1>
-                                <p class="page-header-text mb-5">Looking for car rentals in Iowa City? Save up to 40%. Latest prices: Economy $26/day. Compact $26/day. Intermediate $28/day. Standard $31/day. </p>
-
-                            </div>
-                            <div class="col-lg-6 z-1" data-aos="fade-left">
-                                <div class="device-wrapper mx-auto mb-n15">
-                                    <div class="device" data-device="iPhoneX" data-orientation="portrait"
-                                         data-color="black">
-                                        <div class="screen"><img class="img-fluid z-1"
-                                                                 src="https://source.unsplash.com/MmsbpVzPZjg/518x1122"/>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="row justify-content-center">
+                            <div class="col-xl-8 col-lg-10 text-center">
+                                <h1 class="page-header-title">Way better than a rental car</h1>
+                                <p class="page-header-text mb-5">Looking for car rentals in Iowa City? Save up to 40%. Latest prices: Economy $26/day. Compact $26/day. Intermediate $28/day. Standard $31/day.</p>
+                                <a class="btn btn-marketing rounded-pill btn-primary" href="cars">Browse Cars</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="svg-border-waves text-white">
-                    <svg class="wave" style="pointer-events: none" fill="currentColor" preserveAspectRatio="none"
-                         xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
-                        <defs>
-                            <style>
-                                .a {
-                                    fill: none;
-                                }
-
-                                .b {
-                                    clip-path: url(#a);
-                                }
-
-                                .d {
-                                    opacity: 0.5;
-                                    isolation: isolate;
-                                }
-                            </style>
-                            <clipPath id="a">
-                                <rect class="a" width="1920" height="75"/>
-                            </clipPath>
-                        </defs>
-                        <title>wave</title>
-                        <g class="b">
-                            <path class="c"
-                                  d="M1963,327H-105V65A2647.49,2647.49,0,0,1,431,19c217.7,3.5,239.6,30.8,470,36,297.3,6.7,367.5-36.2,642-28a2511.41,2511.41,0,0,1,420,48"/>
-                        </g>
-                        <g class="b">
-                            <path class="d"
-                                  d="M-127,404H1963V44c-140.1-28-343.3-46.7-566,22-75.5,23.3-118.5,45.9-162,64-48.6,20.2-404.7,128-784,0C355.2,97.7,341.6,78.3,235,50,86.6,10.6-41.8,6.9-127,10"/>
-                        </g>
-                        <g class="b">
-                            <path class="d"
-                                  d="M1979,462-155,446V106C251.8,20.2,576.6,15.9,805,30c167.4,10.3,322.3,32.9,680,56,207,13.4,378,20.3,494,24"/>
-                        </g>
-                        <g class="b">
-                            <path class="d"
-                                  d="M1998,484H-243V100c445.8,26.8,794.2-4.1,1035-39,141-20.4,231.1-40.1,378-45,349.6-11.6,636.7,73.8,828,150"/>
-                        </g>
-                    </svg>
+                <div class="svg-border-rounded text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
                 </div>
             </header>
             <section class="bg-white py-10">
                 <div class="container">
-                    <div class="row text-center">
-                        <div class="col-lg-4 mb-5 mb-lg-0">
-                            <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4"><i
-                                    data-feather="layers"></i></div>
-                            <h3>Built for developers</h3>
-                            <p class="mb-0">Our customizable, block-based build system makes creating your next project
-                                fast and easy!</p>
+                    <div class="row">
+                        <div class="col-lg-6 mb-5 mb-lg-0 divider-right">
+                            <div class="testimonial p-lg-5">
+                                    <p class="testimonial-quote text-primary">"I was impressed with how beautiful and clean this property was. The owner definitely goes the extra mile to help their guests!"</p>
+                                <div class="testimonial-name">Adam Hall</div>
+                                <div class="testimonial-position">Lisbon, Portugal</div>
+                            </div>
                         </div>
-                        <div class="col-lg-4 mb-5 mb-lg-0">
-                            <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4"><i
-                                    data-feather="smartphone"></i></div>
-                            <h3>Modern responsive design</h3>
-                            <p class="mb-0">Featuring carefully crafted, mobile-first components, your end product will
-                                function beautifully on any device!</p>
+                        <div class="col-lg-6">
+                            <div class="testimonial p-lg-5">
+                                    <p class="testimonial-quote text-primary">"Amazing location, convenient parking, and a lots of amenities and extras. I will definitely be returning here whenever I'm in town."</p>
+                                <div class="testimonial-name">Lia Peterson</div>
+                                <div class="testimonial-position">Sacramento, CA, USA</div>
+                            </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="icon-stack icon-stack-xl bg-gradient-primary-to-secondary text-white mb-4"><i
-                                    data-feather="code"></i></div>
-                            <h3>Complete documentation</h3>
-                            <p class="mb-0">All of the layouts, page sections, components, and utilities are fully
-                                covered in this products docs.</p>
-                        </div>
+                    </div>
                     </div>
                 </div>
             </section>
             <hr/>
 
 
-            <section class="bg-white py-10">
 
-                <div class="svg-border-waves text-dark">
-                    <svg class="wave" style="pointer-events: none" fill="currentColor" preserveAspectRatio="none"
-                         xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 75">
-                        <defs>
-                            <style>
-                                .a {
-                                    fill: none;
-                                }
-
-                                .b {
-                                    clip-path: url(#a);
-                                }
-
-                                .d {
-                                    opacity: 0.5;
-                                    isolation: isolate;
-                                }
-                            </style>
-                            <clipPath id="a">
-                                <rect class="a" width="1920" height="75"/>
-                            </clipPath>
-                        </defs>
-                        <title>wave</title>
-                        <g class="b">
-                            <path class="c"
-                                  d="M1963,327H-105V65A2647.49,2647.49,0,0,1,431,19c217.7,3.5,239.6,30.8,470,36,297.3,6.7,367.5-36.2,642-28a2511.41,2511.41,0,0,1,420,48"/>
-                        </g>
-                        <g class="b">
-                            <path class="d"
-                                  d="M-127,404H1963V44c-140.1-28-343.3-46.7-566,22-75.5,23.3-118.5,45.9-162,64-48.6,20.2-404.7,128-784,0C355.2,97.7,341.6,78.3,235,50,86.6,10.6-41.8,6.9-127,10"/>
-                        </g>
-                        <g class="b">
-                            <path class="d"
-                                  d="M1979,462-155,446V106C251.8,20.2,576.6,15.9,805,30c167.4,10.3,322.3,32.9,680,56,207,13.4,378,20.3,494,24"/>
-                        </g>
-                        <g class="b">
-                            <path class="d"
-                                  d="M1998,484H-243V100c445.8,26.8,794.2-4.1,1035-39,141-20.4,231.1-40.1,378-45,349.6-11.6,636.7,73.8,828,150"/>
-                        </g>
-                    </svg>
-                </div>
-            </section>
         </main>
     </div>
     <div id="layoutDefault_footer">
