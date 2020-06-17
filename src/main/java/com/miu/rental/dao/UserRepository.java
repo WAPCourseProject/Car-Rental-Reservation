@@ -5,23 +5,26 @@ import com.miu.rental.model.Client;
 import com.miu.rental.model.User;
 import com.miu.rental.model.customAttributeType.Role;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class UserRepository {
+public class UserRepository implements Serializable {
     private static ArrayList<User> users = new ArrayList<>();
 
-    public  static  ArrayList<User> getAllUsers(){
-        return users;
-    }
+
     public static Boolean isEmpty(){
         if(users.size()==0) return true;
         else return false;
     }
 
+    public static ArrayList<User> getAllUsers(){ // MADE CHANGES HERE ADDED
+        return users;
+    }
+
     public static User getById(Integer id){
         if(!isEmpty()){
             for(User user: users){
-                if(user.getUserId().equals(id)){
+                if(user.getUserId() == id){
                     return user;
                 }
             }
@@ -40,7 +43,7 @@ public class UserRepository {
         return null;
     }
 
-    public static ArrayList<User> getByRole(Role role){
+    public static ArrayList<User> getByRole(String role){
         if(!isEmpty()){
             ArrayList<User> filteredUsers = new ArrayList<>();
             for(User user: users){
@@ -53,11 +56,11 @@ public class UserRepository {
         return null;
     }
 
-    public static Boolean addUser(String firstName, String lastName, String userName, String password, String email, Enum<Role> role) {
-        if(role.compareTo(Role.ADMIN) == 0){
-        users.add(new Admin(firstName, lastName, userName, password, email, role));
-        return true;
-        }else if(role.compareTo(Role.CLIENT) == 0){
+    public static Boolean addUser(String firstName, String lastName, String userName, String password, String email, String role) {
+        if(role.compareTo("ADMIN") == 0){ // MADE CHANGES HERE ON TYPE
+            users.add(new Admin(firstName, lastName, userName, password, email, role));
+            return true;
+        }else if(role.compareTo("CLIENT") == 0){ // MADE CHANGES HERE ON TYPE
             users.add(new Client(firstName, lastName, userName, password, email, role));
             return true;}
         return false;
@@ -67,7 +70,7 @@ public class UserRepository {
         if (!isEmpty()) {
             for (int i = 0; i < users.size(); i++) {
                 User user = users.get(i);
-                if (user.getUserId().equals(id)) {
+                if (user.getUserId() == id) {
                     users.remove(i);
                     return user;
                 }

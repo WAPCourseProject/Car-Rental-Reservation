@@ -4,18 +4,20 @@ import com.miu.rental.model.customAttributeType.BodyType;
 import com.miu.rental.model.customAttributeType.FuelType;
 import com.miu.rental.model.customAttributeType.Transmission;
 
-public class Vehicle {
+import java.io.Serializable;
+
+public class Vehicle  implements Serializable {
     private Integer vehicleId;
-    private String make;
-    private String model;
-    private Enum<BodyType> type;
-    private String color;
-    private Integer year;
+    private String make;//client searchable
+    private String model;//client searchable
+    private String type;//client searchable  // MADE CHANGES HERE TYPE ENUM TO STRING
+    private String color;//client searchable
+    private Integer year;//client searchable
     private Integer capacity;
     private Integer mileage;
     private String condition;//current assessment of its physical condition
-    private Enum<Transmission> transmission;
-    private Enum<FuelType> fuelType;
+    private String transmission;  //MADE CHANGES HERE TYPE ENUM TO STRING
+    private String fuelType;  //MADE CHANGES HERE TYPE ENUM TO STRING
     private String plateNumber;
     private Double rentPrice;
     private Boolean available;
@@ -27,18 +29,18 @@ public class Vehicle {
         this.vehicleId = ++idCounter;
     }
 
-    public Vehicle(String make, String model, Enum<BodyType> type, String color, Integer year, Integer capacity, Integer mileage, String condition, Enum<Transmission> transmission, Enum<FuelType> fuelType, String plateNumber, Double rentPrice, Boolean available) {
+    public Vehicle(String make, String model, String type, String color, Integer year, Integer capacity, Integer mileage, String condition, String transmission, String fuelType, String plateNumber, Double rentPrice, Boolean available) {
         this.vehicleId = ++idCounter;
         this.make = make;
         this.model = model;
-        this.type = type;
+        this.type = type.toUpperCase(); // MADE CHANGES HERE ON toUpperCase
         this.color = color;
         this.year = year;
         this.capacity = capacity;
         this.mileage = mileage;
         this.condition = condition;
-        this.transmission = transmission;
-        this.fuelType = fuelType;
+        this.transmission = transmission.toUpperCase(); // MADE CHANGES HERE ON toUpperCase
+        this.fuelType = fuelType.toUpperCase(); // MADE CHANGES HERE ON toUpperCase
         this.plateNumber = plateNumber;
         this.rentPrice = rentPrice;
         this.available = available;
@@ -68,12 +70,12 @@ public class Vehicle {
         this.model = model;
     }
 
-    public Enum<BodyType> getType() {
+    public String getType() {
         return type;
-    }
+    }          //MADE CHANGES HERE
 
-    public void setType(Enum<BodyType> type) {
-        this.type = type;
+    public void setType(String type) {
+        this.type = type.toUpperCase();     //MADE CHANGES HERE
     }
 
     public String getColor() {
@@ -116,21 +118,21 @@ public class Vehicle {
         this.condition = condition;
     }
 
-    public Enum<Transmission> getTransmission() {
+    public String getTransmission() {
         return transmission;
-    }
+    } // MADE CHANGES HERE ON TYPE
 
-    public void setTransmission(Enum<Transmission> transmission) {
-        this.transmission = transmission;
-    }
+    public void setTransmission(String transmission) {
+        this.transmission = transmission.toUpperCase(); // MADE CHANGES HERE ON toUpperCase
+    } // MADE CHANGES HERE ON TYPE
 
-    public Enum<FuelType> getFuelType() {
+    public String getFuelType() {
         return fuelType;
-    }
+    } // MADE CHANGES HERE ON TYPE
 
-    public void setFuelType(Enum<FuelType> fuelType) {
-        this.fuelType = fuelType;
-    }
+    public void setFuelType(String fuelType) {
+        this.fuelType = fuelType.toUpperCase();
+    } // MADE CHANGES HERE ON TYPE and toUpperCase
 
     public String getPlateNumber() {
         return plateNumber;

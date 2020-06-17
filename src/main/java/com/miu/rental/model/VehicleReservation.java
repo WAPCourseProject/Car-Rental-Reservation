@@ -1,8 +1,9 @@
 package com.miu.rental.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class VehicleReservation {
+public class VehicleReservation  implements Serializable {
     private Integer userId;
     private Integer vehicleId;
     private LocalDate startDate;
