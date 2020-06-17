@@ -3,9 +3,10 @@ package com.miu.rental.dao;
 import com.miu.rental.model.Vehicle;
 import com.miu.rental.model.customAttributeType.BodyType;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class VehicleRepository {
+public class VehicleRepository implements Serializable {
     private static ArrayList<Vehicle> vehicles = new ArrayList<>();
     private ArrayList<Vehicle> subList;
 
@@ -27,12 +28,17 @@ public class VehicleRepository {
     public static Vehicle getById(Integer id){
         if(!isEmpty()){
             for(Vehicle vehicle: vehicles){
-                if(vehicle.getVehicleId().equals(id)){
+                if(vehicle.getVehicleId() == id){
                     return vehicle;
                 }
             }
         }
         return null;
+    }
+
+    public static ArrayList<Vehicle> getAllVehicles(){ // MADE CHANGES HERE ADDED
+
+        return vehicles;
     }
 
     ///////////////////// TO START CHAIN FILTERING /////////////////////
@@ -126,7 +132,7 @@ public class VehicleRepository {
 
         if(subList.size() != 0){
             for(Vehicle vehicle: subList){
-                if(vehicle.getType().compareTo(type) == 0){
+                if(vehicle.getType().compareTo(type.name()) == 0){  //MADE CHANGES HERE
                     filteredList.add(vehicle);
                 }
             }
@@ -151,8 +157,8 @@ public class VehicleRepository {
     ///////////////////// FOR CHAIN FILTERING END /////////////////////
 
 
-    public static Boolean addVehicle(String plateNo, String make, String model, Enum<BodyType> type, String color, Integer year) {
-        vehicles.add(new Vehicle(make, model, type, color, year, 0, 0, null, null, null, plateNo, 0.0, true));
+    public static Boolean addVehicle(String plateNo, String make, String model, String type, String color, Integer year) {  // MADE CHANGES HERE ON TYPE OF 'type'
+        vehicles.add(new Vehicle(make, model, type, color, year, 0, 0, null, "", "", plateNo, 0.0, true)); // MADE CHANGES HERE SET NULL VALUE INITIALIZERS OF TRANSMITION AND FUELTYP TO ""
         return true;
     }
 
@@ -174,7 +180,7 @@ public class VehicleRepository {
         if(isEmpty()) return null;
         for(int i = 0; i < vehicles.size(); i++){
             Vehicle vehicle = vehicles.get(i);
-            if(vehicle.getVehicleId().equals(id)){
+            if(vehicle.getVehicleId() == id){
                 vehicles.remove(i);
                 return vehicle;
             }
@@ -187,7 +193,7 @@ public class VehicleRepository {
         if(isEmpty()) return null;
         for(int i = 0; i < vehicles.size(); i++){
             Vehicle vehicle = vehicles.get(i);
-            if(vehicle.getVehicleId().equals(id)){
+            if(vehicle.getVehicleId() == id){
                 vehicles.remove(i);
                 return vehicle;
             }

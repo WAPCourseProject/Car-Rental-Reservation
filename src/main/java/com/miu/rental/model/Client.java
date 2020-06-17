@@ -3,10 +3,11 @@ package com.miu.rental.model;
 import com.miu.rental.model.customAttributeType.CardType;
 import com.miu.rental.model.customAttributeType.Role;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Client extends User {
+public class Client extends User  implements Serializable {
     private Address address;
     private String phoneNumber;
     private String licenceNumber;
@@ -24,7 +25,7 @@ public class Client extends User {
         this.status = status;
     }
 
-    public Client(String fileName, String lastName, String userName, String password, String email, Enum<Role> role) {
+    public Client(String fileName, String lastName, String userName, String password, String email, String role) { // MADE CHANGES HERE ON TYPE
         super(fileName, lastName, userName, password, email, role);
         this.status = "active";
     }
@@ -90,7 +91,7 @@ public class Client extends User {
         return null;
     }
 
-    public Boolean addCardToWallet(Enum<CardType> type, String nameOnCard, String cardNumber, LocalDate expirationDate, Integer code){
+    public Boolean addCardToWallet(String type, String nameOnCard, String cardNumber, LocalDate expirationDate, Integer code){
 
         PaymentCard card = getPaymentCard(cardNumber);
         if(card != null){

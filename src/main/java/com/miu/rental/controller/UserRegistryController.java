@@ -32,7 +32,7 @@ public class UserRegistryController extends HttpServlet {
             String email = req.getParameter("inputEmailAddress");
             String password = req.getParameter("inputPassword");
             String conformPassword = req.getParameter("inputConfirmPassword");
-            UserRepository.addUser(firstName, lastName, userName, password, email, Role.CLIENT);
+            UserRepository.addUser(firstName, lastName, userName, password, email, "CLIENT");
             req.setAttribute("inputUserName",userName);
             req.setAttribute("inputPassword",password);
             RequestDispatcher view = req.getRequestDispatcher("/login");

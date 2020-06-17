@@ -44,9 +44,6 @@ public class HomeController extends HttpServlet {
         VehicleRepository.addVehicle( "nissan", 2022,2,00,"new","344",550.0, true,"white","netsan","https://source.unsplash.com/AfVTk16WhsY/800x500");
         VehicleRepository.addVehicle( "nissan", 2021,2,00,"new","3fe-44",550.0, true,"burgundy","wrx","https://source.unsplash.com/d1U4yTgezGQ/800x500");
         VehicleRepository.addVehicle( "Toyota", 2020,4,00,"new","Gh-44",450.0, true,"red","rav4","https://source.unsplash.com/XT3Kk0GelbE/800x500");
-
-
-
     }
 
     @Override
