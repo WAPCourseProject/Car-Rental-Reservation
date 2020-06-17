@@ -30,6 +30,11 @@ public class VehicleRepository {
         return null;
     }
 
+    public static ArrayList<Vehicle> getAllVehicles(){ // MADE CHANGES HERE ADDED
+
+        return vehicles;
+    }
+
     ///////////////////// TO START CHAIN FILTERING /////////////////////
     public static ArrayList<Vehicle> getByMake(String make){
         ArrayList<Vehicle> filteredList = new ArrayList<>();

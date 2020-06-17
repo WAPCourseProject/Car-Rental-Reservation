@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +23,9 @@
     <link rel="icon" type="image/x-icon" href="https://bernietes.github.io/res/front/assets/img/favicon.png"/>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="<c:url value='/searchVehicle.css'/>" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
 </head>
 <body>
 <div id="layoutDefault">
@@ -52,8 +56,44 @@
                                 <h1 class="page-header-title">Way better than a rental car</h1>
                                 <p class="page-header-text mb-5">Book unforgettable cars from trusted hosts around the world</p>
                                       <!-- Put Your Searching components here -->
-
-
+                                <div id="searchByVehicleMake" class="input-group">
+                                    <input id="vehicleMake" type="text" class="form-control" placeholder="Search by Car Make" aria-label="Search by Car Make" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-primary addFilter" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+<%--                                        <button class="btn btn-outline-secondary removeFilter" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>--%>
+                                    </div>
+                                </div>
+                                <div id="searchByVehicleModel" class="input-group">
+                                    <input id="vehicleModel" type="text" class="form-control" placeholder="Search by Car Model" aria-label="Search by Car Model" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-primary addFilter" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                        <button class="btn btn-outline-primary removeFilter" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                                <div id="searchByVehicleType" class="input-group">
+                                    <input id="vehicleType" type="text" class="form-control" placeholder="Search by Car Type" aria-label="Search by Car Type" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-primary addFilter" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                        <button class="btn btn-outline-primary removeFilter" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                                <div id="searchByVehicleColor" class="input-group">
+                                    <input id="vehicleColor" type="text" class="form-control" placeholder="Search by Car Color" aria-label="Search by Car Color" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-primary addFilter" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                        <button class="btn btn-outline-primary removeFilter" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                                <div id="searchByVehicleYear" class="input-group">
+                                    <input id="vehicleYear" type="text" class="form-control" placeholder="Search by Car Year" aria-label="Search by Car Year" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+<%--                                        <button class="btn btn-outline-secondary addFilter" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>--%>
+                                        <button class="btn btn-outline-primary removeFilter" type="button"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                                <div  class="input-group">
+                                    <button id="btnSearch" type="button" class="btn btn-primary btn-lg btn-block">SEARCH</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -63,45 +103,52 @@
                 </div>
             </header>
             <section class="bg-white py-10">
-                <div class="container">
-                    <div class="row mb-5">
-                        <div class="col-lg-4 mb-5">
-                            <a class="card lift h-100" href="#!"
-                            ><img class="card-img-top" src="https://source.unsplash.com/4WBvCqeMaDE/800x500" alt="..."/>
-                                <div class="card-body">
-                                    <h4 class="card-title mb-2">Outdoor Patio</h4>
-                                    <p class="card-text">Our property features a beautiful, private outdoor area with seating and a pool.</p>
-                                </div>
-                                <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">
-                                    <div class="small text-primary">See more</div>
-                                    <div class="small text-primary"><i data-feather="arrow-right"></i></div></div
-                                ></a>
-                        </div>
-                        <div class="col-lg-4 mb-5">
-                            <a class="card lift h-100" href="#!"
-                            ><img class="card-img-top" src="https://source.unsplash.com/8xyki0bqvgw/800x500" alt="..."/>
-                                <div class="card-body">
-                                    <h4 class="card-title mb-2">Full Kitchen</h4>
-                                    <p class="card-text">A fully stocked kitchen with all modern amenities provides a peaceful cooking environment.</p>
-                                </div>
-                                <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">
-                                    <div class="small text-primary">See more</div>
-                                    <div class="small text-primary"><i data-feather="arrow-right"></i></div></div
-                                ></a>
-                        </div>
-                        <div class="col-lg-4 mb-5">
-                            <a class="card lift h-100" href="#!"
-                            ><img class="card-img-top" src="https://source.unsplash.com/a4S6KUuLeoM/800x500" alt="..."/>
-                                <div class="card-body">
-                                    <h4 class="card-title mb-2">Comfortable Bedding</h4>
-                                    <p class="card-text">With three newly updated bedrooms you will be sleeping soundly during your stay.</p>
-                                </div>
-                                <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">
-                                    <div class="small text-primary">See more</div>
-                                    <div class="small text-primary"><i data-feather="arrow-right"></i></div></div
-                                ></a>
-                        </div>
+
+                <div id="displayWin" class="container">
+
+                    <div id="displayRow" class="row mb-5">
+
+<%--                        <div class="col-lg-4 mb-5">--%>
+<%--                            <a class="card lift h-100" href="#!"--%>
+<%--                            ><img class="card-img-top" src="https://source.unsplash.com/4WBvCqeMaDE/800x500" alt="..."/>--%>
+<%--                                <div class="card-body">--%>
+<%--                                    <h4 class="card-title mb-2">Outdoor Patio</h4>--%>
+<%--                                    <p class="card-text">Our property features a beautiful, private outdoor area with seating and a pool.</p>--%>
+<%--                                </div>--%>
+<%--                                <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">--%>
+<%--                                    <div class="small text-primary">See more</div>--%>
+<%--                                    <div class="small text-primary"><i data-feather="arrow-right"></i></div></div--%>
+<%--                                ></a>--%>
+<%--                        </div>--%>
+
+<%--                        <div class="col-lg-4 mb-5">--%>
+<%--                            <a class="card lift h-100" href="#!"--%>
+<%--                            ><img class="card-img-top" src="https://source.unsplash.com/8xyki0bqvgw/800x500" alt="..."/>--%>
+<%--                                <div class="card-body">--%>
+<%--                                    <h4 class="card-title mb-2">Full Kitchen</h4>--%>
+<%--                                    <p class="card-text">A fully stocked kitchen with all modern amenities provides a peaceful cooking environment.</p>--%>
+<%--                                </div>--%>
+<%--                                <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">--%>
+<%--                                    <div class="small text-primary">See more</div>--%>
+<%--                                    <div class="small text-primary"><i data-feather="arrow-right"></i></div></div--%>
+<%--                                ></a>--%>
+<%--                        </div>--%>
+
+<%--                        <div class="col-lg-4 mb-5">--%>
+<%--                            <a class="card lift h-100" href="#!"--%>
+<%--                            ><img class="card-img-top" src="https://source.unsplash.com/a4S6KUuLeoM/800x500" alt="..."/>--%>
+<%--                                <div class="card-body">--%>
+<%--                                    <h4 class="card-title mb-2">Comfortable Bedding</h4>--%>
+<%--                                    <p class="card-text">With three newly updated bedrooms you will be sleeping soundly during your stay.</p>--%>
+<%--                                </div>--%>
+<%--                                <div class="card-footer bg-transparent border-top d-flex align-items-center justify-content-between">--%>
+<%--                                    <div class="small text-primary">See more</div>--%>
+<%--                                    <div class="small text-primary"><i data-feather="arrow-right"></i></div></div--%>
+<%--                                ></a>--%>
+<%--                        </div>--%>
+
                     </div>
+
                 </div>
             </section>
 
@@ -144,7 +191,7 @@
         once: true
     });
 </script>
-
+<script type="text/javascript" src="${pageContext.request.contextPath}/searchVehicle.js"></script>
 
 
 </body>
