@@ -38,7 +38,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto mr-lg-5">
                             <li class="nav-item"><a class="nav-link" href="">Home </a></li>
-                            <li class="nav-item"><a class="nav-link" href="cars">Cars</a></li>
+                            <li class="nav-item"><a class="nav-link" href="cars">Browse Cars</a></li>
                         </ul>
                         <a class="btn-primary btn rounded-pill px-4 ml-lg-4"
                            href="login">Log in<i
