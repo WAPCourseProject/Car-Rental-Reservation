@@ -1,8 +1,8 @@
 package com.miu.rental.dao;
 
 import com.miu.rental.model.Client;
-import com.miu.rental.model.Vehicle;
 import com.miu.rental.model.VehicleReservation;
+import com.miu.rental.model.Vehicle;
 
 import java.io.Serializable;
 import java.time.LocalDate;

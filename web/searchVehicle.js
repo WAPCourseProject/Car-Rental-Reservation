@@ -1,5 +1,5 @@
 $(
-    function () {
+    function() {
         "use strict";
 
         const url = "search";
@@ -13,7 +13,6 @@ $(
         const displayWin = $("#searchDisplay");
 
 
-
         searchByVehicleModel.addClass("turnoff-search-param");
         searchByVehicleType.addClass("turnoff-search-param");
         searchByVehicleColor.addClass("turnoff-search-param");
@@ -23,36 +22,35 @@ $(
         $(".removeFilter").click(removeFilterHandler);
 
 
-        function addFilterHandler(e){
+        function addFilterHandler(e) {
             e.preventDefault();
-            $(this).parent("div").parent("div").next().toggleClass("turnoff-search-param");//CHECK IF IT'S SUPPOSED TO BE BLOCK
+            $(this).parent("div").parent("div").next().toggleClass("turnoff-search-param"); //CHECK IF IT'S SUPPOSED TO BE BLOCK
 
 
         }
 
-        function removeFilterHandler(e){
+        function removeFilterHandler(e) {
             e.preventDefault();
             // $(this).parent("div").prev().children(".addFilter").css("display","inline");
             //
-            if($(this).parent("div").parent("div").attr("id") ==="searchByVehicleMake" && $(searchByVehicleModel).css("display") !=="none"){
+            if ($(this).parent("div").parent("div").attr("id") === "searchByVehicleMake" && $(searchByVehicleModel).css("display") !== "none") {
                 $(searchByVehicleModel).toggleClass("turnoff-search-param");
             }
             $(this).parent("div").parent("div").toggleClass("turnoff-search-param");
         }
 
-        function success(data){
+        function success(data) {
             window.location = data["url"];
         }
 
-        function reserveReqHandler(e){
+        function reserveReqHandler(e) {
             const vId = $(this).find("img").attr("alt");
-            const data = {"vehicleId": vId};
+            const data = { "vehicleId": vId };
 
-
-            $.post("requestReserve",data,success,"json");
+            $.post("/Car_Rental_Reservation_war/reserve", data, "json");
         }
 
-        function addCarCard(vehicle){
+        function addCarCard(vehicle) {
 
             const action = $("<div>");
             action.addClass("small");
@@ -90,14 +88,14 @@ $(
 
             const imgCar = $("<img>");
             imgCar.addClass("card-img-top");
-            imgCar.attr("src",vehicle.imageUrl); //add image of car here
-            imgCar.attr("alt",vehicle.vehicleId);
+            imgCar.attr("src", vehicle.imageUrl); //add image of car here
+            imgCar.attr("alt", vehicle.vehicleId);
 
             const anchCard = $("<a>");
             anchCard.addClass("card");
             anchCard.addClass("lift");
             anchCard.addClass("h-100");
-            anchCard.attr("href","#!"); 
+            anchCard.attr("href", "#!");
             anchCard.append(imgCar);
             anchCard.append(divInfo);
             anchCard.append(divFooter);
@@ -115,50 +113,49 @@ $(
 
 
 
-        function searchHandler(e){
+        function searchHandler(e) {
             e.preventDefault();
-            let data = {};//initialize the search parameters to be fetched
+            let data = {}; //initialize the search parameters to be fetched
 
             $("#displayRow").empty();
 
-            if($("#rentStart").val() !== ""  && $("#rentEnd").val() !== ""){
+            if ($("#rentStart").val() !== "" && $("#rentEnd").val() !== "") {
                 data['startDate'] = $("#rentStart").val();
                 data["endDate"] = $("#rentEnd").val();
             }
 
-            if(searchByVehicleMake.css("display") !== "none" && $("#vehicleMake").val() !== ""){
+            if (searchByVehicleMake.css("display") !== "none" && $("#vehicleMake").val() !== "") {
                 data["vehicleMake"] = $("#vehicleMake").val();
             }
 
-            if(searchByVehicleModel.css("display") !== "none" && $("#vehicleModel").val() !== ""){
+            if (searchByVehicleModel.css("display") !== "none" && $("#vehicleModel").val() !== "") {
                 data["vehicleModel"] = $("#vehicleModel").val();
             }
 
-            if(searchByVehicleType.css("display") !== "none" && $("#vehicleType").val() !== ""){
+            if (searchByVehicleType.css("display") !== "none" && $("#vehicleType").val() !== "") {
                 data["vehicleType"] = $("#vehicleType").val();
             }
 
-            if(searchByVehicleColor.css("display") !== "none" && $("#vehicleColor").val() !== ""){
+            if (searchByVehicleColor.css("display") !== "none" && $("#vehicleColor").val() !== "") {
                 data["vehicleColor"] = $("#vehicleColor").val();
             }
 
-            if(searchByVehicleYear.css("display") !== "none" && $("#vehicleYear").val() !== ""){
+            if (searchByVehicleYear.css("display") !== "none" && $("#vehicleYear").val() !== "") {
                 data["vehicleYear"] = $("#vehicleYear").val();
             }
 
-            $.post(url,data,processData, "json");
+            $.post(url, data, processData, "json");
         }
 
-        function processData(data){
+        function processData(data) {
 
             let vehicles = data["filteredVehicles"];
-            for( const vehicle of vehicles){
+            for (const vehicle of vehicles) {
 
                 addCarCard(vehicle);
 
             }
         }
-
         btnSearch.click(searchHandler);
     }
 )

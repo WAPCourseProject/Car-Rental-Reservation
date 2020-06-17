@@ -65,7 +65,6 @@ public class UserRepository implements Serializable {
             return true;}
         return false;
     }
-
     public static User removeUserById(Integer id) {
         if (!isEmpty()) {
             for (int i = 0; i < users.size(); i++) {

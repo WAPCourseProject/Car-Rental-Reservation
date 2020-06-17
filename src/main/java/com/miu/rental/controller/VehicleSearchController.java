@@ -27,7 +27,6 @@ public class VehicleSearchController extends HttpServlet {
         Integer[] di = {Integer.parseInt(d[0]),Integer.parseInt(d[1]),Integer.parseInt(d[2])};
         return di;
     }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer[] ld;
         LocalDate startDate = null;
