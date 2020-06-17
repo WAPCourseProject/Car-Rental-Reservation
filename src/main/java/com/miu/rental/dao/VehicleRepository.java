@@ -9,7 +9,9 @@ public class VehicleRepository {
     private static ArrayList<Vehicle> vehicles = new ArrayList<>();
     private ArrayList<Vehicle> subList;
 
-
+    public VehicleRepository() {
+        super();
+    }
     public VehicleRepository(ArrayList<Vehicle> filteredList){
         subList = filteredList;
     }
@@ -17,6 +19,9 @@ public class VehicleRepository {
     public static Boolean isEmpty(){
         if(vehicles.size()==0) return true;
         else return false;
+    }
+    public static ArrayList<Vehicle> getAllVehicle(){
+        return vehicles;
     }
 
     public static Vehicle getById(Integer id){
@@ -150,6 +155,20 @@ public class VehicleRepository {
         vehicles.add(new Vehicle(make, model, type, color, year, 0, 0, null, null, null, plateNo, 0.0, true));
         return true;
     }
+
+    public static  Boolean addVehicle(String make, Integer year, Integer capacity, Integer mileage, String condition, String plateNumber,
+                                      Double rentPrice, Boolean available, String color,String model, String imgURL){
+
+        vehicles.add(new Vehicle(make, year, capacity, mileage, condition,plateNumber,rentPrice,available,color,model,imgURL));
+
+        return  true;
+    }
+    public static  Boolean addVehicle(Vehicle vehicle){
+        vehicles.add(vehicle);
+
+          return  true;
+    }
+
 
     public static Vehicle removeVehicleById(Integer id){
         if(isEmpty()) return null;
