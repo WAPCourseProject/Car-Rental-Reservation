@@ -1,8 +1,11 @@
+<%@ page import="com.edu.cs472.miu.model.Vehicle" %>
+
+
 <%--
   Created by IntelliJ IDEA.
-  User: Grace
-  Date: 6/14/2020
-  Time: 4:33 PM
+  User: brocklife
+  Date: 6/13/2020
+  Time: 7:06 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -195,5 +198,4 @@
 
 
 </body>
-
 </html>

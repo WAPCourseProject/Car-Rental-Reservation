@@ -25,7 +25,7 @@ public class Util {
             int userID = (int) req.getSession().getAttribute("userID");
             User user = UserRepository.getById(userID);
             assert user != null;
-            return user.getRole() == Role.ADMIN;
+            return user.getRole().equals("ADMIN");
         }
         return false;
     }

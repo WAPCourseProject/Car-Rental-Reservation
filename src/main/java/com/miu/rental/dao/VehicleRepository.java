@@ -3,13 +3,16 @@ package com.miu.rental.dao;
 import com.miu.rental.model.Vehicle;
 import com.miu.rental.model.customAttributeType.BodyType;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class VehicleRepository {
+public class VehicleRepository implements Serializable {
     private static ArrayList<Vehicle> vehicles = new ArrayList<>();
     private ArrayList<Vehicle> subList;
 
-
+    public VehicleRepository() {
+        super();
+    }
     public VehicleRepository(ArrayList<Vehicle> filteredList){
         subList = filteredList;
     }
@@ -18,11 +21,14 @@ public class VehicleRepository {
         if(vehicles.size()==0) return true;
         else return false;
     }
+    public static ArrayList<Vehicle> getAllVehicle(){
+        return vehicles;
+    }
 
     public static Vehicle getById(Integer id){
         if(!isEmpty()){
             for(Vehicle vehicle: vehicles){
-                if(vehicle.getVehicleId().equals(id)){
+                if(vehicle.getVehicleId() == id){
                     return vehicle;
                 }
             }
@@ -126,7 +132,7 @@ public class VehicleRepository {
 
         if(subList.size() != 0){
             for(Vehicle vehicle: subList){
-                if(vehicle.getType().compareTo(type) == 0){
+                if(vehicle.getType().compareTo(type.name()) == 0){  //MADE CHANGES HERE
                     filteredList.add(vehicle);
                 }
             }
@@ -151,16 +157,30 @@ public class VehicleRepository {
     ///////////////////// FOR CHAIN FILTERING END /////////////////////
 
 
-    public static Boolean addVehicle(String plateNo, String make, String model, Enum<BodyType> type, String color, Integer year) {
-        vehicles.add(new Vehicle(make, model, type, color, year, 0, 0, null, null, null, plateNo, 0.0, true));
+    public static Boolean addVehicle(String plateNo, String make, String model, String type, String color, Integer year) {  // MADE CHANGES HERE ON TYPE OF 'type'
+        vehicles.add(new Vehicle(make, model, type, color, year, 0, 0, null, "", "", plateNo, 0.0, true)); // MADE CHANGES HERE SET NULL VALUE INITIALIZERS OF TRANSMITION AND FUELTYP TO ""
         return true;
     }
+
+    public static  Boolean addVehicle(String make, Integer year, Integer capacity, Integer mileage, String condition, String plateNumber,
+                                      Double rentPrice, Boolean available, String color,String model, String imgURL){
+
+        vehicles.add(new Vehicle(make, year, capacity, mileage, condition,plateNumber,rentPrice,available,color,model,imgURL));
+
+        return  true;
+    }
+    public static  Boolean addVehicle(Vehicle vehicle){
+        vehicles.add(vehicle);
+
+          return  true;
+    }
+
 
     public static Vehicle removeVehicleById(Integer id){
         if(isEmpty()) return null;
         for(int i = 0; i < vehicles.size(); i++){
             Vehicle vehicle = vehicles.get(i);
-            if(vehicle.getVehicleId().equals(id)){
+            if(vehicle.getVehicleId() == id){
                 vehicles.remove(i);
                 return vehicle;
             }
@@ -173,7 +193,7 @@ public class VehicleRepository {
         if(isEmpty()) return null;
         for(int i = 0; i < vehicles.size(); i++){
             Vehicle vehicle = vehicles.get(i);
-            if(vehicle.getVehicleId().equals(id)){
+            if(vehicle.getVehicleId() == id){
                 vehicles.remove(i);
                 return vehicle;
             }

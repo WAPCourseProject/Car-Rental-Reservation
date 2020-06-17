@@ -4,15 +4,20 @@ import com.miu.rental.model.Client;
 import com.miu.rental.model.Vehicle;
 import com.miu.rental.model.VehicleReservation;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class ReservationRepository {
+public class ReservationRepository implements Serializable {
     private static ArrayList <VehicleReservation> reservations = new ArrayList<>();
 
     public static Boolean isEmpty(){
         if(reservations.size()==0) return true;
         else return false;
+    }
+
+    public static ArrayList<VehicleReservation> getAllReservations(){ // MADE CHANGES HERE ADDED
+        return reservations;
     }
 
     public static Integer getReservationIndx (Integer clientId, Integer vehicleId, LocalDate start, LocalDate end){
@@ -21,8 +26,8 @@ public class ReservationRepository {
 
         for(int i = 0; i < reservations.size(); i++){
             VehicleReservation thisReservation = reservations.get(i);
-            if(thisReservation.getUserId().equals(clientId) && thisReservation.getVehicleId().equals(vehicleId) &&
-            thisReservation.getStartDate().compareTo(start) == 0 && thisReservation.getEndDate().compareTo(end) == 0
+            if(thisReservation.getUserId() == clientId && thisReservation.getVehicleId() == vehicleId &&
+                    thisReservation.getStartDate().compareTo(start) == 0 && thisReservation.getEndDate().compareTo(end) == 0
             ){
                 return i;
             }
@@ -36,7 +41,7 @@ public class ReservationRepository {
 
         for(int i = 0; i < reservations.size(); i++){
             VehicleReservation thisReservation = reservations.get(i);
-            if(thisReservation.getUserId().equals(clientId) && thisReservation.getVehicleId().equals(vehicleId) &&
+            if(thisReservation.getUserId() == clientId && thisReservation.getVehicleId() == vehicleId &&
                     thisReservation.getStartDate().compareTo(start) == 0 && thisReservation.getEndDate().compareTo(end) == 0
             ){
                 return thisReservation;
@@ -50,7 +55,7 @@ public class ReservationRepository {
         ArrayList<Integer> reservationIndices = new ArrayList<>();
         for(int i = 0; i < reservations.size(); i++){
             VehicleReservation thisReservation = reservations.get(i);
-            if(thisReservation.getUserId().equals(clientId)){
+            if(thisReservation.getUserId() == clientId ){
                 reservationIndices.add(i);
             }
         }
@@ -62,7 +67,7 @@ public class ReservationRepository {
         ArrayList<Integer> reservationIndices = new ArrayList<>();
         for(int i = 0; i < reservations.size(); i++){
             VehicleReservation thisReservation = reservations.get(i);
-            if(thisReservation.getVehicleId().equals(vehicleId)){
+            if(thisReservation.getVehicleId() == vehicleId ){
                 reservationIndices.add(i);
             }
         }
@@ -79,7 +84,7 @@ public class ReservationRepository {
         if(!isEmpty()){
             ArrayList<VehicleReservation> clientsReservations = new ArrayList<>();
             for(VehicleReservation reservation: reservations){
-                if(reservation.getUserId().equals(id)){
+                if(reservation.getUserId() == id){
                     clientsReservations.add(reservation);
                 }
             }
@@ -91,7 +96,7 @@ public class ReservationRepository {
         if(!isEmpty()){
             ArrayList<VehicleReservation> reservationsOfVehicle = new ArrayList<>();
             for(VehicleReservation reservation: reservations){
-                if(reservation.getVehicleId().equals(id)){
+                if(reservation.getVehicleId() == id){
                     reservationsOfVehicle.add(reservation);
                 }
             }
@@ -103,7 +108,7 @@ public class ReservationRepository {
         if(!isEmpty()){
             ArrayList<VehicleReservation> reserves = new ArrayList<>();
             for(VehicleReservation reservation: reservations){
-                if(reservation.getUserId().equals(clientId) && reservation.getVehicleId() == vehicleId){
+                if(reservation.getUserId() == clientId && reservation.getVehicleId() == vehicleId){
                     reserves.add(reservation);
                 }
             }
@@ -149,7 +154,7 @@ public class ReservationRepository {
 
         for(int i = 0; i < reservations.size(); i++){
             VehicleReservation thisReservation = reservations.get(i);
-            if(thisReservation.getUserId().equals(clientId) && thisReservation.getVehicleId() == vehicleId){
+            if(thisReservation.getUserId() == clientId && thisReservation.getVehicleId() == vehicleId){
                 reservations.remove(i);
                 return thisReservation;
             }
@@ -163,7 +168,7 @@ public class ReservationRepository {
 
         for(int i = 0; i < reservations.size(); i++){
             VehicleReservation thisReservation = reservations.get(i);
-            if(thisReservation.getUserId().equals(clientId) && thisReservation.getVehicleId().equals(vehicleId)){
+            if(thisReservation.getUserId() == clientId && thisReservation.getVehicleId() == vehicleId){
                 reservations.remove(i);
             }
         }
@@ -205,9 +210,9 @@ public class ReservationRepository {
 
         VehicleReservation reservation = getReservation(clientId,vehicleId,start,end);
         if(reservation != null){
-        reservation.setStartDate(start);
-        reservation.setEndDate(end);
-        return true;
+            reservation.setStartDate(start);
+            reservation.setEndDate(end);
+            return true;
         }else return false;
 
     }

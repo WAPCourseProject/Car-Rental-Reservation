@@ -2,7 +2,9 @@ package com.miu.rental.model;
 
 import com.miu.rental.model.customAttributeType.Role;
 
-public class Admin extends User {
+import java.io.Serializable;
+
+public class Admin extends User  implements Serializable {
     private String employeeId;
 
     public Admin() {
@@ -13,7 +15,7 @@ public class Admin extends User {
         this.employeeId = employeeId;
     }
 
-    public Admin(String fileName, String lastName, String userName, String password, String email, Enum<Role> role) {
+    public Admin(String fileName, String lastName, String userName, String password, String email, String role) { // MADE CHANGES HERE ROLL TYPLE
         super(fileName, lastName, userName, password, email, role);
         this.employeeId = employeeId;
     }
