@@ -37,7 +37,7 @@ public class VehicleAddController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        request.setAttribute("vehicles", dao.getAllVehicles());
-        request.setAttribute("vehicles",vehicleRepository.getAllVehicle());
+        request.setAttribute("vehicles", vehicleRepository.getAllVehicle());
         RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/dashboard/admin/vehicleadmin.jsp");
         view.forward(request, response);
         /*    try {

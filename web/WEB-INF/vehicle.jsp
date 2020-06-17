@@ -1,4 +1,4 @@
-<%@ page import="com.edu.cs472.miu.model.Vehicle" %>
+
 
 
 <%--
@@ -16,12 +16,7 @@
 </head>
 <body bgcolor="cyan">
 
-<%
-    //    Vehicle aleb = (Vehicle) request.getAttribute("a1");
-    Vehicle aleb = (Vehicle) session.getAttribute("alien");
-    //(Vehicle) session.getAttribute("a1");
-    out.println(aleb);
-%>
+
 
 
 </body>

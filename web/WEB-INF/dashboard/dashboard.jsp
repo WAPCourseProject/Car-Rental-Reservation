@@ -247,8 +247,65 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
-                <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                <h1>Edit Car Detail</h1>
+                <div style="width: 900px; margin-left: auto; margin-right: auto">
+
+
+                    <form action="/Car_Rental_Reservation_war/admin/edit" method="post">
+                        <input  name="vehicleId" value="${getById.vehicleId}">
+                        <div class="modal-body">
+
+
+                            <div>
+                                <input type="text" id="make"
+                                       name="make" value="${getById.make}" placeholder="Make"/>
+                            </div>
+                            <div>
+                                <input type="text" id="model"
+                                       name="model" value="${getById.model}" placeholder="Model"/>
+                            </div>
+                            <div>
+                                <input type="text" id="color"
+                                       name="color" value="${getById.color}" placeholder="Color"/>
+                            </div>
+                            <div>
+                                <input type="number" id="capacity"
+                                       value="${getById.capacity}" placeholder="Capacity"/>
+                            </div>
+                            <div>
+                                <input type="number" id="year"
+                                       name="capacity" value="${getById.year}"  placeholder="Year"/>
+                            </div>
+                            <div>
+                                <input type="text" id="condition"
+                                       name ="condition" value="${getById.condition}" placeholder="Condition"/>
+                            </div>
+
+                            <div>
+                                <input type="number" id="mileage"
+                                       name="mileage" value="${getById.mileage}" placeholder="Mileage"/>
+                            </div>
+                            <div>
+                                <input type="number" id="rentPrice"
+                                       name="rentPrice" value="${getById.rentPrice}"  placeholder="rentPrice"/>
+                            </div>
+
+                            <div>
+
+                                <input type="text" id="plateNumber"
+                                       name="plateNumber" value="${getById.plateNumber}"  placeholder="PlateNumber"/>
+                            </div>
+
+                            <div>
+                                <input type="text" id="available"
+                                       name="available" value="${getById.available}" placeholder="Availability"/>
+                            </div>
+                            <input type="submit" value="Submit">
+
+                        </div>
+                    </form>
+
+                </div>
 
             </div>
             <!-- /.container-fluid -->

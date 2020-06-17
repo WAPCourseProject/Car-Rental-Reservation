@@ -219,4 +219,10 @@ public class Vehicle  implements Serializable {
         this.imageUrl =imgURL;
 
     }
+    public Vehicle(Integer id ,String Condition, boolean available) {
+        super();
+        this.vehicleId= id;
+        this.make = make;
+        this.color = color;
+    }
 }
