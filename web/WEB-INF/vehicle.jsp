@@ -1,6 +1,3 @@
-<%@ page import="com.edu.cs472.miu.model.Vehicle" %>
-
-
 <%--
   Created by IntelliJ IDEA.
   User: brocklife
