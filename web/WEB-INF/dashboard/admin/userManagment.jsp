@@ -327,10 +327,7 @@
                                                     <td>${users.userName}</td>
                                                     <td>${users.role}</td>
 
-                                                    <td><div class="custom-control custom-switch">
-                                                        <input type="checkbox" checked class="custom-control-input" id="${users.firstName}">
-                                                        <label class="custom-control-label" for="${users.firstName}"></label>
-                                                    </div></td>
+
                                                 </tr>
                                             </c:forEach>
                                             </tbody>
