@@ -36,21 +36,21 @@
         <main>
             <nav class="navbar navbar-marketing navbar-expand-lg bg-white navbar-light">
                 <div class="container">
-                        <div class="navbar-brand text-primary">Car Reservation</div>
+                    <div class="navbar-brand text-primary">Your Request is Reserved</div>
                     <div class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation"></div>
-                    </div>
+                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                         aria-expanded="false" aria-label="Toggle navigation"></div>
+                </div>
             </nav>
             <!-- Put Your content in here -->
             <div class="container">
+                <div class="card bg-light">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <div class="d-flex align-items-center justify-content-between">
-                            <h3 class="mb-0">Your Reservation Detail Information</h3>
+                            <h3 class="mb-0">Reservation Summary</h3>
                             <div class="badge badge-primary-soft text-primary badge-marketing">1 Openings</div>
                         </div>
-
                         <hr class="mb-0">
                         <ul class="list-group list-group-flush list-group-careers">
                             <li class="list-group-item">
@@ -77,10 +77,6 @@
                                 <a href="#!">Mileage</a>
                                 <div class="small">${vehicle. mileage}</div>
                             </li>
-                            <li class="list-group-item">
-                                <a href="#!">Transmission</a>
-                                <div class="small">${vehicle.transmission}</div>
-                            </li> <li class="list-group-item">
                             <a href="#!">Plate Number</a>
                             <div class="small">${vehicle.plateNumber}</div>
                         </li>
@@ -90,11 +86,11 @@
                             </li>
                         </ul>
                         <hr class="mb-0">
-                        <div class="card bg-light shadow-none" style= "height: 10rem;">
-                            <div class="card-body text-center p-5">
-                                <a class="btn btn-danger btn-marketing rounded-pill" href="reservation-cancel">Cancel</a>
-                                <a class="btn btn-success btn-marketing rounded-pill" href="reservation-procced">Reserve</a>
+                            <div class="card-body text-center p-5" >
+                                 Reservation Completed
+                                Thank you For Choosing Us!
                             </div>
+                        <a class="btn btn-info btn-marketing rounded-pill" href="reservation-cancel">Back To Home</a>
                         </div>
                     </div>
                 </div>
