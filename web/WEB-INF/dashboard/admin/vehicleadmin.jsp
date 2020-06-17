@@ -327,7 +327,10 @@
                                                         <td><c:out value="${vehicle.mileage}"/></td>
                                                         <td><c:out value="${vehicle.rentPrice}"/></td>
                                                         <td><c:out value="${vehicle.plateNumber}"/></td>
-                                                        <td><c:out value="${vehicle.available}"/></td>
+                                                        <td><div class="custom-control custom-switch">
+                                                            <input type="checkbox" checked="" class="custom-control-input" id="ava">
+                                                            <label class="custom-control-label" for="available"></label>
+                                                        </div></td>
                                                             <%--                                                        <td><c:out value="${vehicle.imageUrl}"/></td>--%>
                                                         <td><a class="btn btn-secondary
 " href="edit?vehicleId=${vehicle.vehicleId}">Edit</a></td>

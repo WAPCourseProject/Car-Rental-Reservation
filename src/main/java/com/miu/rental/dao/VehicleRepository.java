@@ -1,9 +1,11 @@
 package com.miu.rental.dao;
 
 import com.miu.rental.model.Vehicle;
+import com.miu.rental.model.VehicleReservation;
 import com.miu.rental.model.customAttributeType.BodyType;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class VehicleRepository implements Serializable {
@@ -198,6 +200,19 @@ public class VehicleRepository implements Serializable {
             }
         }
         return null;
+    }
+
+    public static Boolean modifyVehicleById(Integer id,String condition, boolean aval) {
+
+            Vehicle vehicle = VehicleRepository.getById(id);
+            if( vehicle!=null) {
+                System.out.println(condition);
+                vehicle.setCondition(condition);
+                vehicle.setAvailable(aval);
+                System.out.println(vehicle.toString());
+                return true;
+            }else return false;
+
     }
 
 

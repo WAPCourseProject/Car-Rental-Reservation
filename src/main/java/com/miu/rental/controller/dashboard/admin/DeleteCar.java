@@ -1,8 +1,6 @@
 package com.miu.rental.controller.dashboard.admin;
 
 
-
-
 import com.miu.rental.dao.VehicleDAO;
 import com.miu.rental.dao.VehicleRepository;
 
@@ -19,11 +17,11 @@ public class DeleteCar extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     private VehicleDAO dao;
-   private VehicleRepository vehicleRepository;
+    private VehicleRepository vehicleRepository;
 
     public DeleteCar() {
         this.dao = new VehicleDAO();
-        this.vehicleRepository= new VehicleRepository();
+        this.vehicleRepository = new VehicleRepository();
     }
 
 
@@ -31,9 +29,9 @@ public class DeleteCar extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        doPost(req, resp);
         String id = req.getParameter("vehicleId");
-        Integer carId= Integer.parseInt(id);
+        Integer carId = Integer.parseInt(id);
         System.out.println(carId);
-       // use this one alternative
+        // use this one alternative
 //        dao.deleteVehicleById(carId);
         vehicleRepository.removeVehicleById(carId);
         resp.sendRedirect("vehicle");
