@@ -47,7 +47,7 @@ $(
         function reserveReqHandler(e){
             const vId = $(this).find("img").attr("alt");
             const data = {"vehicleId": vId};
-            // alert(vId);
+
 
             $.post("requestReserve",data,success,"json");
         }
@@ -81,7 +81,7 @@ $(
 
             const infoBody = $("<p>");
             infoBody.addClass("card-text");
-            infoBody.html("Type: " + vehicle.type + "<br>Color: " + vehicle.color + "<br>Year :" + vehicle.year + "<br> Price: " + vehicle.price); //add specs of the car here
+            infoBody.html("Color: " + vehicle.color + "<br>Year :" + vehicle.year + "<br> Price: " + vehicle.rentPrice); //add specs of the car here
 
             const divInfo = $("<div>");
             divInfo.addClass("card-body");
@@ -151,8 +151,6 @@ $(
 
         function processData(data){
 
-            // data = JSON.parse(data);
-            // alert(data["filteredVehicles"]);
             let vehicles = data["filteredVehicles"];
             for( const vehicle of vehicles){
 

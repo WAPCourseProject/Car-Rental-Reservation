@@ -164,7 +164,6 @@ public class VehicleRepository implements Serializable {
 
     public static  Boolean addVehicle(String make, Integer year, Integer capacity, Integer mileage, String condition, String plateNumber,
                                       Double rentPrice, Boolean available, String color,String model, String imgURL){
-
         vehicles.add(new Vehicle(make, year, capacity, mileage, condition,plateNumber,rentPrice,available,color,model,imgURL));
 
         return  true;
