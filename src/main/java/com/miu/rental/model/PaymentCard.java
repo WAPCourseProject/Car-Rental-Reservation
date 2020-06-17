@@ -2,11 +2,12 @@ package com.miu.rental.model;
 
 import com.miu.rental.model.customAttributeType.CardType;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class PaymentCard {
+public class PaymentCard  implements Serializable {
     private Client owner;
-    private Enum<CardType> type;
+    private String type; // MADE CHANGES HERE ON TYPE
     private String nameOnCard;
     private String cardNumber;
     private LocalDate expirationDate;
@@ -15,9 +16,9 @@ public class PaymentCard {
     public PaymentCard() {
     }
 
-    public PaymentCard(Client owner, Enum<CardType> type, String nameOnCard, String cardNumber, LocalDate expirationDate, Integer code) {
+    public PaymentCard(Client owner, String type, String nameOnCard, String cardNumber, LocalDate expirationDate, Integer code) { // MADE CHANGES HERE ON TYPE
         this.owner = owner;
-        this.type = type;
+        this.type = type.toUpperCase(); // MADE CHANGES HERE ON toUpperCase
         this.nameOnCard = nameOnCard;
         this.cardNumber = cardNumber;
         this.expirationDate = expirationDate;
@@ -32,13 +33,13 @@ public class PaymentCard {
         this.owner = owner;
     }
 
-    public Enum<CardType> getType() {
+    public String getType() {
         return type;
-    }
+    } // MADE CHANGES HERE ON TYPE
 
-    public void setType(Enum<CardType> type) {
-        this.type = type;
-    }
+    public void setType(String type) {
+        this.type = type.toUpperCase();
+    } // MADE CHANGES HERE ON TYPE and toUpperCase
 
     public String getNameOnCard() {
         return nameOnCard;

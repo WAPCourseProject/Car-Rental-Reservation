@@ -2,14 +2,16 @@ package com.miu.rental.model;
 
 import com.miu.rental.model.customAttributeType.Role;
 
-public abstract class User {
+import java.io.Serializable;
+
+public abstract class User  implements Serializable {
     private Integer userId;
     private String firstName;
     private String lastName;
     private String userName;
     private String password;
     private String email;
-    private Enum<Role> role;
+    private String role; // MADE CHANGES HERE ON TYPE
 
     private static Integer idCounter= 0;
 
@@ -17,14 +19,14 @@ public abstract class User {
         this.userId = ++idCounter;
     }
 
-    public User(String firstName, String lastName, String userName, String password, String email, Enum<Role> role) {
+    public User(String firstName, String lastName, String userName, String password, String email, String role) { // MADE CHANGES HERE ON TYPE
         this.userId = ++idCounter;
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
         this.password = password;
         this.email = email;
-        this.role = role;
+        this.role = role.toUpperCase(); // MADE CHANGES HERE ON toUpperCase
     }
 
     public Integer getUserId() {
@@ -75,13 +77,13 @@ public abstract class User {
         this.email = email;
     }
 
-    public Enum<Role> getRole() {
+    public String getRole() {
         return role;
-    }
+    } // MADE CHANGES HERE ON TYPE
 
-    public void setRole(Enum<Role> role) {
-        this.role = role;
-    }
+    public void setRole(String role) {
+        this.role = role.toUpperCase();
+    } // MADE CHANGES HERE ON TYPE
 
     @Override
     public String toString() {
