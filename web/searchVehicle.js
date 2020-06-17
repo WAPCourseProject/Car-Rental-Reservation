@@ -2,7 +2,7 @@ $(
     function () {
         "use strict";
 
-        const url = "/Car_Rental_Reservation_war/search";
+        const url = "search";
         const btnSearch = $("#btnSearch");
         const searchByRentPeriod = $("#searchByRentPeriod");
         const searchByVehicleMake = $("#searchByVehicleMake");
@@ -45,7 +45,7 @@ $(
             const data = {"vehicleId": vId};
             // alert(vId);
 
-            $.post("/Car_Rental_Reservation_war/requestReserve",data, "json");
+            $.post("requestReserve",data, "json");
         }
 
         function addCarCard(vehicle){
@@ -146,24 +146,12 @@ $(
         }
 
         function processData(data){
-            alert("hello");
+
             // data = JSON.parse(data);
             // alert(data["filteredVehicles"]);
             let vehicles = data["filteredVehicles"];
             for( const vehicle of vehicles){
-                // let colId = $('<td>').text(vehicle.id);
-                // let colMake = $('<td>').text(vehicle.make);
-                // let colModel = $('<td>').text(vehicle.model);
-                // let colType = $('<td>').text(vehicle.type);
-                // let colColor = $('<td>').text(vehicle.color);
-                // let colYear = $('<td>').text(vehicle.year);
-                // let tr = $('<tr>').append(colId)
-                //     .append(colMake)
-                //     .append(colModel)
-                //     .append(colType)
-                //     .append(colColor)
-                //     .append(colYear);
-                // $('#tbl_vehicles>tbody').append(tr);
+
                 addCarCard(vehicle);
 
             }
