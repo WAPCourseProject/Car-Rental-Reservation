@@ -186,4 +186,37 @@ public class Vehicle  implements Serializable {
                 ", imageUrl='" + imageUrl + '\'' +
                 '}';
     }
+
+    /////////////////////// ADDED FROM b2 repo
+    public Vehicle( String make, Integer year, Integer capacity, Integer mileage, String condition, String plateNumber,
+                   Double rentPrice, Boolean available, String color,String model) {
+        this.vehicleId = ++idCounter;
+        this.make = make;
+        this.year = year;
+        this.capacity = capacity;
+        this.mileage = mileage;
+        this.condition = condition;
+        this.plateNumber = plateNumber;
+        this.rentPrice = rentPrice;
+        this.available = available;
+        this.color = color;
+        this.model =model;
+    }
+
+    public  Vehicle (String make, Integer year, Integer capacity, Integer mileage, String condition, String plateNumber,
+                     Double rentPrice, Boolean available, String color,String model, String imgURL){
+        this.vehicleId = ++idCounter;
+        this.make = make;
+        this.year = year;
+        this.capacity = capacity;
+        this.mileage = mileage;
+        this.condition = condition;
+        this.plateNumber = plateNumber;
+        this.rentPrice = rentPrice;
+        this.available = available;
+        this.color = color;
+        this.model =model;
+        this.imageUrl =imgURL;
+
+    }
 }

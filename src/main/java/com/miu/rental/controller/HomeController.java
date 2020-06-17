@@ -2,9 +2,9 @@ package com.miu.rental.controller;
 
 import com.miu.rental.dao.UserRepository;
 import com.miu.rental.dao.VehicleRepository;
+import com.miu.rental.model.Vehicle;
 import com.miu.rental.model.customAttributeType.BodyType;
 import com.miu.rental.model.customAttributeType.Role;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,6 +39,11 @@ public class HomeController extends HttpServlet {
         VehicleRepository.addVehicle("12354dsdf","Toyota","RAV4", "CROSSOVER", "white", 2020);// MADE CHANGES HERE CHANGED TYPE ARG
         VehicleRepository.addVehicle("12354dsdf","Tesla","Model S", "SEDAN", "burgundy", 2012);// MADE CHANGES HERE CHANGED TYPE ARG
         VehicleRepository.addVehicle("12354dsdf","Toyota","Prius", "SEDAN", "red", 2016);// MADE CHANGES HERE CHANGED TYPE ARG
+        VehicleRepository.addVehicle( "Tesla", 2018,4,10000,"new","FT-345",650.0, true,"Silver","model x","https://source.unsplash.com/8xyki0bqvgw/800x500");
+        VehicleRepository.addVehicle( "Toyota", 2021,4,20,"new","FT-345",350.0, true,"Black","corolla"," https://source.unsplash.com/8xyki0bqvgw/800x500");
+        VehicleRepository.addVehicle( "nissan", 2022,2,00,"new","344",550.0, true,"white","netsan","https://source.unsplash.com/AfVTk16WhsY/800x500");
+        VehicleRepository.addVehicle( "nissan", 2021,2,00,"new","3fe-44",550.0, true,"burgundy","wrx","https://source.unsplash.com/d1U4yTgezGQ/800x500");
+        VehicleRepository.addVehicle( "Toyota", 2020,4,00,"new","Gh-44",450.0, true,"red","rav4","https://source.unsplash.com/XT3Kk0GelbE/800x500");
     }
 
     @Override
