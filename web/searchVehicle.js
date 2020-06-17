@@ -40,12 +40,16 @@ $(
             $(this).parent("div").parent("div").toggleClass("turnoff-search-param");
         }
 
+        function success(data){
+            window.location = data["url"];
+        }
+
         function reserveReqHandler(e){
             const vId = $(this).find("img").attr("alt");
             const data = {"vehicleId": vId};
             // alert(vId);
 
-            $.post("requestReserve",data, "json");
+            $.post("requestReserve",data,success,"json");
         }
 
         function addCarCard(vehicle){
@@ -53,7 +57,7 @@ $(
             const action = $("<div>");
             action.addClass("small");
             action.addClass("text-primary");
-            action.html("Click to Reserve");
+            action.html("Clik to Reserve");
             const arrowImg = $("<i>");
             const arrow = $("<div>");
             arrow.addClass("small");
